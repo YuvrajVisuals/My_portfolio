@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FINCUTS | Future of Finance Video Engineering</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        body {
+            background-color: #060913;
+            color: #cbd5e1;
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #060913;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00f0ff;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .neon-text-blue {
+            color: #00f0ff;
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+        }
+
+        .neon-text-green {
+            color: #00ff66;
+            text-shadow: 0 0 10px rgba(0, 255, 102, 0.5);
+        }
+
+        .neon-border-blue:hover {
+            border-color: #00f0ff;
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .animate-marquee {
+            display: flex;
+            width: max-content;
+            animation: marquee 25s linear infinite;
+        }
+
+        .hero-gradient-text {
+            background: linear-gradient(to right, #00f0ff, #00ff66);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="selection:bg-[#00f0ff] selection:text-black">
+
+    <nav class="fixed top-0 w-full z-50 p-4">
+        <div class="max-w-6xl mx-auto glass-card rounded-2xl px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-[#00f0ff] to-[#00ff66] flex items-center justify-center">
+                    <i data-lucide="video" class="w-4 h-4 text-black"></i>
+                </div>
+                <span class="text-white font-bold tracking-wide text-lg hidden sm:block">FIN<span class="text-[#00f0ff]">CUTS</span></span>
+            </div>
+            
+            <div class="flex items-center gap-6 text-sm font-medium text-slate-300">
+                <a href="#work" class="hover:text-white transition-colors">Work</a>
+                <a href="#services" class="hover:text-white transition-colors">Services</a>
+                <a href="#contact" class="px-5 py-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 text-white transition-all flex items-center gap-2 neon-border-blue">
+                    Connect <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <canvas id="heroCanvas" class="absolute top-0 left-0 w-full h-full opacity-40 pointer-events-none z-0"></canvas>
+        
+        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-sm text-[#00f0ff] mb-8">
+                <i data-lucide="sparkles" class="w-4 h-4"></i>
+                <span>High-Retention Video Engineering</span>
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+                Editing the <br/>
+                <span class="hero-gradient-text">Future of Finance.</span>
+            </h1>
+            
+            <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+                Data-driven video editing tailored for fintech, crypto, and modern financial brands. We turn complex economics into viral, high-converting content.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#work" class="w-full sm:w-auto px-8 py-4 rounded-full bg-white text-black font-semibold hover:bg-slate-200 transition-colors flex items-center justify-center gap-2">
+                    View Case Studies <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+                <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-full glass-card text-white font-semibold hover:bg-white/10 transition-colors flex items-center justify-center neon-border-blue">
+                    Start a Project
+                </a>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center opacity-50 animate-bounce">
+            <span class="text-xs uppercase tracking-widest mb-2">Scroll</span>
+            <div class="w-[1px] h-10 bg-gradient-to-b from-white to-transparent"></div>
+        </div>
+    </section>
+
+    <div class="relative w-full overflow-hidden py-10 border-y border-white/5 bg-[#0a0f1c]/50 backdrop-blur-sm z-10">
+        <div class="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-[#060913] to-transparent z-10"></div>
+        <div class="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-[#060913] to-transparent z-10"></div>
+        
+        <div class="animate-marquee flex items-center gap-12 px-6">
+            <div class="flex items-center gap-3 opacity-60 hover:opacity-100 transition-opacity whitespace-nowrap">
+                <i data-lucide="smartphone" class="text-[#00f0ff] w-5 h-5"></i><span class="text-slate-300 font-medium">iPhone Pro</span>
+            </div>
+            <div class="flex items-center gap-3 opacity-60 hover:opacity-100 transition-opacity whitespace-nowrap">
+                <i data-lucide="tablet" class="text-[#00f0ff] w-5 h-5"></i><span class="text-slate-300 font-medium">iPad Pro</span>
+            </div>
+            <div class="flex items-center gap-3 opacity-60 hover:opacity-100 transition-opacity whitespace-nowrap">
+                <i data-lucide="video" class="text-[#00f0ff] w-5 h-5"></i><span class="text-slate-300 font-medium">CapCut</span>
+            </div>
+            <div class="flex items-center gap-3 opacity-60 hover:opacity-100 transition-opacity whitespace-nowrap">
+                <i data-lucide="layers" class="text-[#00f0ff] w-5 h-5"></i><span class="text-slate-300 font-medium">LumaFusion</span>
+            </div>
+            <div class="flex items-center gap-3 opacity-60 hover:opacity-100 transition-opacity whitespace-nowrap">
+                <i data-lucide="monitor-play" class="text-[#00f0ff] w-5 h-5"></i><span class="text-slate-300 font-medium">Premiere Pro</span>
+            </div>
+            <div class="flex items-center gap-3 opacity-60 hover:opacity-100 transition-opacity whitespace-nowrap">
+                <i data-lucide="wand-2" class="text-[#00f0ff] w-5 h-5"></i><span class="text-slate-300 font-medium">After Effects</span>
+            </div>
+            </div>
+    </div>
+
+    <section id="work" class="py-24 px-6 max-w-7xl mx-auto relative z-10">
+        <div class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Featured Work</h2>
+            <p class="text-slate-400">Proof is in the performance. Hover to see details.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[250px]">
+            <div class="md:col-span-2 md:row-span-2 glass-card rounded-3xl p-6 relative group overflow-hidden neon-border-blue transition-all duration-500 flex flex-col justify-between">
+                <div class="absolute inset-0 bg-gradient-to-b from-[#00f0ff]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="flex justify-between items-start z-10">
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Crypto App Launch</h3>
+                        <p class="text-slate-400 text-sm max-w-sm">Dynamic explainer showcasing DeFi staking.</p>
+                    </div>
+                    <div class="w-12 h-12 rounded-full bg-[#00f0ff]/10 flex items-center justify-center border border-[#00f0ff]/30">
+                        <i data-lucide="play" class="text-[#00f0ff] fill-current w-5 h-5"></i>
+                    </div>
+                </div>
+                <div class="flex-grow my-6 rounded-xl bg-[#060913]/80 border border-white/5 flex items-center justify-center">
+                    <i data-lucide="bar-chart-3" class="text-[#00f0ff]/50 w-24 h-24"></i>
+                </div>
+                <div class="flex flex-wrap gap-2 z-10">
+                    <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold backdrop-blur-md">
+                        <i data-lucide="trending-up" class="w-3.5 h-3.5 neon-text-green"></i><span class="text-white">+20% Installs</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:col-span-1 md:row-span-1 glass-card rounded-3xl p-6 group hover:border-[#00ff66]/40 transition-colors flex flex-col justify-between">
+                <h3 class="text-lg font-bold text-white">Trading Reels</h3>
+                <p class="text-xs text-slate-400">TikTok strategy for daily updates.</p>
+                <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold">
+                    <i data-lucide="bar-chart-3" class="w-3.5 h-3.5 neon-text-blue"></i><span class="text-white">1.2M Views</span>
+                </div>
+            </div>
+
+            <div class="md:col-span-1 md:row-span-2 glass-card rounded-3xl p-6 group hover:border-[#00f0ff]/40 transition-colors flex flex-col">
+                <h3 class="text-lg font-bold text-white mb-6">Fintech Explainers</h3>
+                <div class="flex-grow rounded-xl bg-gradient-to-b from-[#0a0f1c] to-[#060913] border border-white/5 flex items-center justify-center">
+                    <i data-lucide="smartphone" class="text-slate-600 w-16 h-16"></i>
+                </div>
+                <div class="mt-6">
+                    <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold">
+                        <i data-lucide="trending-up" class="w-3.5 h-3.5 neon-text-green"></i><span class="text-white">15% Higher CTR</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:col-span-2 md:row-span-1 glass-card rounded-3xl p-6 group hover:border-[#00f0ff]/40 transition-colors flex flex-col justify-between">
+                <h3 class="text-xl font-bold text-white">Investment Ad Campaign</h3>
+                <div class="flex justify-between items-end">
+                    <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold">
+                        <i data-lucide="trending-up" class="w-3.5 h-3.5 neon-text-green"></i><span class="text-white">$50K Managed</span>
+                    </div>
+                    <button class="text-[#00f0ff] text-sm font-medium hover:underline flex items-center gap-1">
+                        Watch Full <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 px-6 relative z-10">
+        <div class="max-w-4xl mx-auto glass-card rounded-3xl p-8 md:p-12 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-[#00f0ff] opacity-10 blur-[100px] rounded-full pointer-events-none"></div>
+            <div class="grid md:grid-cols-2 gap-12 relative z-10">
+                <div>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Let's Edit The <br/><span class="text-[#00f0ff]">Future</span>.</h2>
+                    <p class="text-slate-400 mb-8">Ready to elevate your financial brand? I'll get back to you within 24 hours.</p>
+                    <div class="flex items-center gap-3 text-slate-300">
+                        <i data-lucide="message-square" class="text-[#00ff66] w-5 h-5"></i>
+                        <span>Available for freelance & contract</span>
+                    </div>
+                </div>
+
+                <form class="space-y-4" onsubmit="event.preventDefault();">
+                    <input type="text" placeholder="Your Name / Brand" class="w-full bg-[#060913]/50 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-[#00f0ff] transition-colors placeholder:text-slate-500">
+                    <input type="email" placeholder="Email Address" class="w-full bg-[#060913]/50 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-[#00f0ff] transition-colors placeholder:text-slate-500">
+                    <textarea rows="4" placeholder="Project details..." class="w-full bg-[#060913]/50 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-[#00f0ff] transition-colors placeholder:text-slate-500 resize-none"></textarea>
+                    <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-[#00f0ff] to-[#00ff66] text-black font-bold text-lg hover:shadow-[0_0_20px_rgba(0,240,255,0.4)] transition-all flex items-center justify-center gap-2">
+                        Send Request <i data-lucide="send" class="w-5 h-5"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 text-center text-slate-500 text-sm border-t border-white/5 relative z-10">
+        <p>© <span id="year"></span> FINCUTS. Designed for the Future of Finance.</p>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Background Animation Logic
+        const canvas = document.getElementById('heroCanvas');
+        const ctx = canvas.getContext('2d');
+        let width, height, phase = 0;
+
+        const resize = () => {
+            width = window.innerWidth;
+            height = window.innerHeight;
+            canvas.width = width;
+            canvas.height = height;
+        };
+
+        window.addEventListener('resize', resize);
+        resize();
+
+        const drawLine = (yOffset, amplitude, frequency, color, speed, glow) => {
+            ctx.beginPath();
+            ctx.moveTo(0, height / 2 + yOffset);
+            for (let x = 0; x < width; x++) {
+                const y = height / 2 + yOffset 
+                    + Math.sin(x * frequency + phase * speed) * amplitude 
+                    + Math.sin(x * frequency * 2.5 + phase * speed * 1.5) * (amplitude * 0.3)
+                    + Math.sin(x * frequency * 0.5 - phase * speed * 0.8) * (amplitude * 0.5);
+                ctx.lineTo(x, y);
+            }
+            ctx.strokeStyle = color;
+            ctx.lineWidth = 2;
+            ctx.shadowBlur = glow;
+            ctx.shadowColor = color;
+            ctx.stroke();
+            ctx.shadowBlur = 0;
+        };
+
+        const render = () => {
+            ctx.clearRect(0, 0, width, height);
+            
+            // Background Grid
+            ctx.beginPath();
+            for(let i = 0; i < width; i += 100) { ctx.moveTo(i, 0); ctx.lineTo(i, height); }
+            for(let j = 0; j < height; j += 100) { ctx.moveTo(0, j); ctx.lineTo(width, j); }
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.02)';
+            ctx.stroke();
+
+            drawLine(-50, 60, 0.002, 'rgba(0, 240, 255, 0.6)', 0.02, 15);
+            drawLine(50, 40, 0.003, 'rgba(0, 255, 102, 0.4)', 0.015, 15);
+            
+            phase += 1;
+            requestAnimationFrame(render);
+        };
+        render();
+    </script>
+</body>
+</html>
